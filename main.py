@@ -88,9 +88,6 @@ while switch_on:
             needed_coffee = needed_ing['coffee']
             resources["water"] = w - needed_water
             resources["coffee"] = c - needed_coffee
-            if w < needed_water or c < needed_coffee:
-                print("sorry cnt place order")
-            storage(w, c)
             print(resources)
             if total_paid > espresso_cost:
                 change = total_paid - espresso_cost
@@ -118,8 +115,6 @@ while switch_on:
             resources["water"] = w - needed_water
             resources["coffee"] = c - needed_coffee
             resources["milk"] = m - needed_milk
-            if w < needed_water or c < needed_coffee or m < needed_milk:
-                print("sorry cnt place order")
             storage(w, m, c)
             print(resources)
             if total_paid > latte_cost:
@@ -148,8 +143,6 @@ while switch_on:
             resources["water"] = w - needed_water
             resources["coffee"] = c - needed_coffee
             resources["milk"] = m - needed_milk
-            if w < needed_water or c < needed_coffee or m < needed_milk:
-                print("sorry cnt place order")
             storage(w, m, c)
             print(resources)
             if total_paid > cappuccino_cost:
