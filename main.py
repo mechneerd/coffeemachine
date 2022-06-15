@@ -56,19 +56,20 @@ def paid(q, d, n, p):
     return customer_paid
 
 
+# TODO RESOURCE
 w = resources["water"]
 m = resources["milk"]
 c = resources["coffee"]
 
-
+# TODO RESOURCE NEEDED
 def resource(needed_ing):
     for item in needed_ing:
         if needed_ing[item] >= resource[item]:
             print(f' there is not enough {item}')
 
 switch_on = True
-
 cash_in_the_machine = 0
+
 while switch_on:
     need = input("What would you like?(espresso/latte/cappuccino):")
     w = resources["water"]
@@ -105,6 +106,7 @@ while switch_on:
             needed_coffee = needed_ing['coffee']
             resources["water"] = w - needed_water
             resources["coffee"] = c - needed_coffee
+            # TODO CHECK ENOUGH RESOURCE
             if resources["water"] <= 0 or resources["coffee"] <= 0:
                 print('Not enough resource')
                 cash_in_the_machine -= espresso_cost
@@ -137,6 +139,7 @@ while switch_on:
             resources["water"] = w - needed_water
             resources["coffee"] = c - needed_coffee
             resources["milk"] = m - needed_milk
+            # TODO CHECK ENOUGH RESOURCE
             if resources["water"] <= 0 or resources["coffee"] <= 0 or resources["milk"] <= 0:
                 print('not enough resource')
                 cash_in_the_machine -= latte_cost
@@ -169,6 +172,7 @@ while switch_on:
             resources["water"] = w - needed_water
             resources["coffee"] = c - needed_coffee
             resources["milk"] = m - needed_milk
+            # TODO CHECK ENOUGH RESOURCE
             if resources["water"] <= 0 or resources["coffee"] <= 0 or resources["milk"] <= 0:
                 print('not enough resource')
                 cash_in_the_machine -= cappuccino_cost
