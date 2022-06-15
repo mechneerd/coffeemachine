@@ -92,6 +92,7 @@ while switch_on:
             resources["coffee"] = c - needed_coffee
             if resources["water"] <= 0 or resources["coffee"] <= 0:
                 print('Not enough resource')
+                cash_in_the_machine -= espresso_cost
                 switch_on = False
             if total_paid > espresso_cost:
                 change = total_paid - espresso_cost
@@ -109,7 +110,7 @@ while switch_on:
         if total_paid >= latte_cost:
             print("Enjoy the coffee")
             # TODO CASH CHANGE
-            cash_in_the_machine += espresso_cost
+            cash_in_the_machine += latte_cost
             # TODO INGREDIENTS CHANGE
             print(resources)
             i = MENU["latte"]
@@ -122,8 +123,10 @@ while switch_on:
             resources["milk"] = m - needed_milk
             if resources["water"] <= 0 or resources["coffee"] <= 0 or resources["milk"] <= 0:
                 print('not enough resource')
+                cash_in_the_machine -= latte_cost
                 switch_on = False
-            if total_paid > latte_cost:
+                print(f"Take your refund {total_paid}")
+            elif total_paid > latte_cost:
                 change = total_paid - latte_cost
                 change = round(change, 2)
                 print(f"Your change is {change}")
@@ -152,6 +155,7 @@ while switch_on:
             resources["milk"] = m - needed_milk
             if resources["water"] <= 0 or resources["coffee"] <= 0 or resources["milk"] <= 0:
                 print('not enough resource')
+                cash_in_the_machine -= cappuccino_cost
                 switch_on = False
             if total_paid > cappuccino_cost:
                 change = total_paid - cappuccino_cost
