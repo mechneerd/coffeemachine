@@ -1,3 +1,18 @@
+
+print('''
+            / / /
+        ____\_\_\____
+       /    / / /    \
+       \_____________/ ___
+       |             |/   \
+       |             |    /
+       |   Coffee    |   /
+       |             |  /
+       |             |_/
+       \_____________/
+       ''')
+
+
 MENU = {
     "espresso": {
         "ingredients": {
@@ -79,7 +94,7 @@ while switch_on:
         p = int(input("how many pennies?"))
         total_paid = paid(q, d, n, p)
         if total_paid >= espresso_cost:
-            print("Enjoy the coffee")
+            print(f"Enjoy the coffee")
             # TODO CASH CHANGE
             cash_in_the_machine += espresso_cost
             # TODO INGREDIENTS CHANGE
@@ -94,10 +109,11 @@ while switch_on:
                 print('Not enough resource')
                 cash_in_the_machine -= espresso_cost
                 switch_on = False
-            if total_paid > espresso_cost:
+                print(f"Take your refund ${total_paid}")
+            elif total_paid > espresso_cost:
                 change = total_paid - espresso_cost
                 change = round(change, 2)
-                print(f"Your change is {change}")
+                print(f"Your change is ${change}")
         else:
             print("You dont have enough cash")
     elif need == "latte":
@@ -108,7 +124,7 @@ while switch_on:
         p = int(input("how many pennies?"))
         total_paid = paid(q, d, n, p)
         if total_paid >= latte_cost:
-            print("Enjoy the coffee")
+            print(f"Enjoy the coffee")
             # TODO CASH CHANGE
             cash_in_the_machine += latte_cost
             # TODO INGREDIENTS CHANGE
@@ -125,11 +141,11 @@ while switch_on:
                 print('not enough resource')
                 cash_in_the_machine -= latte_cost
                 switch_on = False
-                print(f"Take your refund {total_paid}")
+                print(f"Take your refund ${total_paid}")
             elif total_paid > latte_cost:
                 change = total_paid - latte_cost
                 change = round(change, 2)
-                print(f"Your change is {change}")
+                print(f"Your change is ${change}")
         else:
             print("You dont have enough cash")
     elif need == "cappuccino":
@@ -140,7 +156,7 @@ while switch_on:
         p = int(input("how many pennies?"))
         total_paid = paid(q, d, n, p)
         if total_paid >= cappuccino_cost:
-            print("Enjoy the coffee")
+            print("Enjoy the coffee ")
             # TODO CASH CHANGE
             cash_in_the_machine += cappuccino_cost
             # TODO INGREDIENTS CHANGE
@@ -157,12 +173,13 @@ while switch_on:
                 print('not enough resource')
                 cash_in_the_machine -= cappuccino_cost
                 switch_on = False
-            if total_paid > cappuccino_cost:
+                print(f"Take your refund ${total_paid}")
+            elif total_paid > cappuccino_cost:
                 change = total_paid - cappuccino_cost
                 change = round(change, 2)
-                print(f"Your change is {change}")
+                print(f"Your change is ${change}")
         else:
             print("You dont have enough cash")
-    print(f'Money in the machine {cash_in_the_machine}')
+    print(f'Money in the machine ${cash_in_the_machine}')
 
 
